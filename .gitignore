@@ -9,6 +9,10 @@ dist/
 build/
 .cache/
 
+# Auto-generated JavaScript files
+**/*.js
+**/*.js.map
+
 # TypeScript build output
 *.tsbuildinfo
 

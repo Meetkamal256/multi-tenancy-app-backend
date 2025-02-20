@@ -1,3 +1,5 @@
+import dotenv from "dotenv";
+dotenv.config();
 import express from "express";
 import cors from "cors";
 import tenantRoutes from "./routes/tenant.routes";
@@ -8,6 +10,7 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use(cors());
 
 // Routes
 app.use("/tenants", tenantRoutes);
