@@ -17,9 +17,13 @@ model User {
 
 
 model Tenant {
-   id    String @id @default(auto()) @map("_id") @db.ObjectId 
-  name      String 
-  email     String @unique 
-  createdAt DateTime @default(now()) 
-  isActive    Boolean  @default(true) 
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId 
+  name         String  
+  email        String   @unique  
+  createdAt    DateTime @default(now())  
+  isActive     Boolean  @default(true)  
+  subscription String   @default("free")                                                                                                  // Options: free, pro, enterprise  
+  billingCycle String   @default("monthly")  // monthly, yearly  
+  dataUsage    Int      @default(0)  // Data used in MB, GB, etc.
 }
+

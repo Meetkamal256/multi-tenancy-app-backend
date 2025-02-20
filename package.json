@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "npx prisma db seed"
   },
   "repository": {
     "type": "git",
@@ -36,5 +37,8 @@
     "prisma": "^6.4.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   }
 }
