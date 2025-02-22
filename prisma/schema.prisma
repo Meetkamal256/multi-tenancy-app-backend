@@ -12,8 +12,10 @@ model User {
   name      String
   email     String   @unique
   password  String
+  role      String   @default("tenant") // Can be 'admin' or 'tenant'
   createdAt DateTime @default(now())
 }
+
 
 
 model Tenant {
@@ -23,7 +25,6 @@ model Tenant {
   createdAt    DateTime @default(now())  
   isActive     Boolean  @default(true)  
   subscription String   @default("free")                                                                                                  // Options: free, pro, enterprise  
-  billingCycle String   @default("monthly")  // monthly, yearly  
-  dataUsage    Int      @default(0)  // Data used in MB, GB, etc.
+  billingCycle String   @default("monthly") 
+  dataUsage    Int      @default(0) 
 }
-
