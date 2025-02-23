@@ -5,6 +5,8 @@ import express from "express";
 import cors from "cors";
 import tenantRoutes from "./routes/tenant.routes";
 import authRoutes from "./routes/auth.routes";
+import adminRoutes from "./routes/admin.routes";
+
 
 const app = express();
 
@@ -20,6 +22,7 @@ app.get("/", (req, res) => {
 // Routes
 app.use("/tenants", tenantRoutes);
 app.use("/auth", authRoutes);
+app.use("/admin", adminRoutes);
 
 // Global Error Handler
 app.use(

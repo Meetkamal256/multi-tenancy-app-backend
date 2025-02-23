@@ -7,6 +7,7 @@ interface AuthRequest extends Request {
   user?: { userId: string; email: string; role: string };
 }
 
+
 // Authenticate User Middleware
 export const authenticateUser = (
   req: AuthRequest,

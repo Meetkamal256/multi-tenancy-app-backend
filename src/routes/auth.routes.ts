@@ -19,7 +19,7 @@ router.get("/profile", authenticateUser, getUserProfile);
 
 // Admin-only route (Example)
 router.get(
-  "/admin-dashboard",
+  "/admin",
   authenticateUser,
   authorizeRoles("admin"),
   (req, res) => {
