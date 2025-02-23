@@ -3,8 +3,8 @@ import {
   registerUser,
   loginUser,
   getUserProfile,
-} from "../controllers/authController";
-import { authenticateUser } from "../middleware/authMiddleware";
+} from "../controllers/auth.controller";
+import { authenticateUser, authorizeRoles } from "../middleware/authMiddleware";
 
 const router = Router();
 
@@ -16,5 +16,15 @@ router.post("/login", loginUser);
 
 // Protected route to get user profile
 router.get("/profile", authenticateUser, getUserProfile);
+
+// Admin-only route (Example)
+router.get(
+  "/admin-dashboard",
+  authenticateUser,
+  authorizeRoles("admin"),
+  (req, res) => {
+    res.json({ message: "Welcome to the admin dashboard" });
+  }
+);
 
 export default router;
