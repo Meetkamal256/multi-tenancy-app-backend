@@ -3,9 +3,9 @@ dotenv.config();
 
 import express from "express";
 import cors from "cors";
-import tenantRoutes from "../src/routes/tenant.routes";
-import authRoutes from "../src/routes/auth.routes";
-import adminRoutes from "../src/routes/admin.routes";
+import tenantRoutes from "./routes/tenant.routes";
+import authRoutes from "./routes/auth.routes";
+import adminRoutes from "./routes/admin.routes";
 
 const app = express();
 
